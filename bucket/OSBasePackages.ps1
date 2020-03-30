@@ -1,13 +1,11 @@
 
-Write-Host 'Installing and configuring OSBasePackages...'
-. "$PSScriptRoot\Utils.ps1"
+. $PSScriptRoot\Utils.ps1
 
-'7zip', 'notepad2', 'Everything', 'es' 'GoogleChrome', 'SysInternals', 'WinDirStat', `
-        'fzf', 'procexp', 'powershell-core', 'ussf', 'bat', `
-        'ripgrep' | `
-    ForEach-Object { 
-        Write-Host "Installing $_..."
-        choco install -y $_
-    }
+'7zip', 'notepad2', 'Everything', 'GoogleChrome', 'SysInternals', 'WinDirStat', `
+    'microsoft-windows-terminal', 'fzf' | Where-Object {
+    Test-ChocolateyPackageInstalled $_
+} | ForEach-Object { 
+    choco install -y $_
+}
 
 
