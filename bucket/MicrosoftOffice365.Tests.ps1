@@ -1,11 +1,12 @@
-. "$PSScriptRoot\Utils.ps1"
-$sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace('.Tests', '')
-. "$PSScriptRoot\$sut"
 
 Describe Install-MicrosoftOffice365 {
     $meScript = $PSCommandPath
-    $installName = ((Split-Path $meScript -Leaf) -replace '.Tests.ps1', '')
-    if(Test-ScoopPackageInstalled $InstallName) { scoop uninstall $installName }
+    $InstallName = ((Split-Path $meScript -Leaf) -replace '.Tests.ps1', '')
+    scoop export | Where-Object { 
+        $_ -like "*$installName*"
+    } | Foreach-Object {
+        scoop uninstall $_
+    }
     $manifestPath = "$PSScriptRoot\MicrosoftOffice365.json"
     $manifestJson = Get-Content $manifestPath
     $manifest = $manifestJson | ConvertFrom-Json
