@@ -6,6 +6,6 @@
         "https://raw.githubusercontent.com/MarkMichaelis/ScoopBucket/master/bucket/GitConfigVisualStudio.ps1"
     ],
     "installer": {
-        "script": "& \"$dir\\GitConfigVisualStudio.ps1\""
+        "file": "GitConfigVisualStudio.ps1"
     }
 }
