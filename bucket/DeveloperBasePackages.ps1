@@ -7,7 +7,7 @@ Write-Host 'Installing and configuring OSBasePackages...'
     choco install -y $_
 }
 
-#hub - GitHub CLI
+#gh - GitHub CLI
 'gh', 'dotnet', 'VisualStudio2019Enterprise' | ForEach-Object { 
     Write-Host "Installing $_..."
     scoop install -g $_
