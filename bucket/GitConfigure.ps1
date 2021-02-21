@@ -1,6 +1,7 @@
 
 . "$PSScriptRoot\Utils.ps1"
-. "$PSScriptRoot\GitIntegrationWithBeyondCompare.ps1"
+. "$PSScriptRoot\GitConfigBeyondCompare.ps1" # Runs Invoke-GitConfigBeyondCompare
+. "$PSScriptRoot\GitConfigVisualStudio.ps1" # Runs Invoke-GitConfigVisualStudio
 
 Function GitConfigure {
     Write-Host "Running $($MyInvocation.MyCommand.Name)..."
@@ -21,10 +22,11 @@ Function GitConfigure {
         #/NoAutoCrlf"    <# This setting only affects new installs, it will not override an existing .gitconfig. This will ensure 'Checkout as is, commit as is' #>
     }
 
-    choco install poshgit -y # -force -allowclobber
+    Install-Module posh-git -y -Scope -AllUsers -force -allowclobber  # Both Posh-Git and IntelliTect.Git support Get-GitBranch. 
+                                                                      # IntelliTect.Git will get priority if it appears first in the PSModulePath
+                                                                      # or it is installed after Pscx (if not using source code)
     #Import-Module (Get-Childitem $env:PSModulePath.Split(';') posh-git.psm1 -Recurse -ErrorAction Ignore).FullName
-
-    Invoke-GitIntegrationWithBeyondCompare
+    Add-PoshGitToProfile -AllHosts -AllUsers -StartSshAgent
 
     git config --global color.ui 'auto'
     git config --global push.default 'simple'
@@ -58,5 +60,6 @@ Function GitConfigure {
     git config difftool.debug-powershell.cmd 'powershell -noprofile -command { Write-Output \"REMOTE=''$REMOTE'' LOCAL=''$LOCAL''\"}'
     git config difftool.debug-cmd.exe.cmd 'cmd.exe /C \"ECHO REMOTE=''$REMOTE'' LOCAL=''$LOCAL''\"}'
     git config difftool.vscode.cmd 'code --wait --new-window --diff \"$LOCAL\" \"$REMOTE\"'
+
 }
 GitConfigure
