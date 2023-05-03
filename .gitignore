@@ -1,0 +1,9 @@
+*.iml
+*.sublime-workspace
+*~
+._*
+.idea
+.vscode
+/checkver*
+checkver-*.html
+page.html

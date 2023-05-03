@@ -1,5 +1,7 @@
 {
-    "recommendations": [
-        "justerest.multi-replace"
-    ]
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "justerest.multi-replace"
+    "ms-vscode.PowerShell"
+  ]
 }
