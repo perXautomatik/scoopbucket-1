@@ -1,2 +1,8 @@
-/config/
-/profile/
+*.sublime-workspace
+*~
+._*
+/.cache/
+/.vagrant/
+/checkver*
+checkver-*.html
+page.html
