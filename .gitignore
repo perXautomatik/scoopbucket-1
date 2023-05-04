@@ -1,0 +1,5 @@
+autohotkey/lib
+autohotkey/dist/
+autohotkey/dist-newstyle/
+*.log
+Modules
