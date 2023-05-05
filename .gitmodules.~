@@ -46,25 +46,31 @@ path = ini
 [submodule "loose/postinstallScript"]
 	path = loose/postinstallScript
 	url = https://github.com/perXautomatik/Windows10-Postinstall.git
-[submodule "scoopbucket-1"]
-	path = scoopbucket-1
-	url = https://github.com/perXautomatik/scoopbucket-1
-[submodule "scoopbucket-presist"]
-	path = scoopbucket-presist
-	url = https://github.com/perXautomatik/ScoopBucket
+
+
 [submodule "submodules/PowershellRoutines"]
 	path = submodules/PowershellRoutines
 	url = https://github.com/perXautomatik/Win10-Initial-Setup-Script.git
 [submodule "submodules/RegImporter"]
 	path = submodules/RegImporter
 	url = https://github.com/perXautomatik/Reg-importer.git
+[submodule "scoopbucket"]
+	path = scoopbucket
+	url = https://github.com/perXautomatik/ScoopBucket
 [submodule "submodules/postinstallScript"]
 	path = submodules/postinstallScript
 	url = https://github.com/perXautomatik/Windows10-Postinstall.git
 [submodule "windowsAdmin"]
-	
-	[submodule "PostInstall/Optimize"]
 	branch = WindowsAdmin
 	path = windowsadmin
-	path = PostInstall/Optimize
 	url = https://github.com/perXautomatik/PowerShell-Scripts.git
+	
+	[submodule "PostInstall/Optimize"]
+	path = PostInstall/Optimize
+
+[submodule "scoopbucket-1"]
+	path = scoopbucket-1
+	url = https://github.com/perXautomatik/scoopbucket-1
+[submodule "scoopbucket-presist"]
+	path = scoopbucket-presist
+	url = https://github.com/perXautomatik/ScoopBucket
