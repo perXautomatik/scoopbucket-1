@@ -1,0 +1,34 @@
+
+ [submodule "WindowsDebloat/MustHave-2018"]
+path = WindowsDebloat/MustHave-2018
+ url = https://gist.github.com/c3fe34831f6c80a094a38960aa4e9446
+
+ [submodule "WindowsDebloat/OptimizationScript"]
+path = WindowsDebloat/OptimizationScript
+ url = https://gist.github.com/aef342634e5671befb1904a1be39e56c
+
+ [submodule "WindowsDebloat/reclaimWindows"]
+path = WindowsDebloat/reclaimWindows
+ url = https://gist.github.com/alirobe/7f3b34ad89a159e6daa1
+
+[submodule "submodules/postinstallScript"]
+	path = submodules/postinstallScript
+	url = https://github.com/perXautomatik/Windows10-Postinstall.git
+[submodule "submodules/PowershellRoutines"]
+	path = submodules/PowershellRoutines
+	url = https://github.com/perXautomatik/Win10-Initial-Setup-Script.git
+[submodule "submodules/RegImporter"]
+	path = submodules/RegImporter
+	url = https://github.com/perXautomatik/Reg-importer.git
+[submodule "scoopbucket"]
+	path = scoopbucket
+	url = https://github.com/perXautomatik/ScoopBucket
+[submodule "Buckets/perXautomatik"]
+	path = Buckets/perXautomatik
+	url = https://github.com/perXautomatik/ScoopBucket
+[submodule "scoopbucket-1"]
+	path = scoopbucket-1
+	url = https://github.com/perXautomatik/scoopbucket-1
+[submodule "scoopbucket-presist"]
+	path = scoopbucket-presist
+	url = https://github.com/perXautomatik/ScoopBucket
