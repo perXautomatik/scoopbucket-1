@@ -1,0 +1,13 @@
+{
+    "version": "20201121.2",
+    "url": "https://github.com/benpye/wsl-ssh-pageant/releases/download/20201121.2/wsl-ssh-pageant-amd64-gui.exe",
+    "hash": "8abd3945285cd08a704c9e1112a53b15f8da35d18c51b67385ae05de790af168",
+    "bin": "wsl-ssh-pageant-amd64-gui.exe",
+    "checkver": {
+        "url": "https://api.github.com/repos/benpye/wsl-ssh-pageant/tags",
+        "re": "\"name\":[\\w]*\"(?<version>[\\d.]+)\""
+    },
+    "autoupdate": {
+        "url": "https://github.com/benpye/wsl-ssh-pageant/releases/download/$version/wsl-ssh-pageant-amd64-gui.exe"
+    }
+}

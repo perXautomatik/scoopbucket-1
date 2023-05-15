@@ -1,0 +1,17 @@
+{
+    "homepage": "https://github.com/pfn/keepasshttp",
+    "version": "1.8.4.2",
+    "license": "Unknown",
+    "url": "https://raw.github.com/pfn/keepasshttp/master/KeePassHttp.plgx",
+    "hash": "e00b456692e337e63d21e34cfe23e03d67d5ec1ce08e9b66ca2a88f6a687ef6d",
+    "depends": "diseq/keepass",
+    "installer": {
+        "script": [
+            "$pluginDir = New-Item -ItemType Directory \"$(appdir keepass $global)\\current\\Plugins\\KeePassHttp\"",
+            "Copy-Item \"$dir\\KeePassHttp.plgx\" \"$pluginDir\""
+        ]
+    },
+    "uninstaller": {
+        "script": "Remove-Item -Recurse \"$(appdir keepass $global)\\current\\Plugins\\KeePassHttp\""
+    }
+}

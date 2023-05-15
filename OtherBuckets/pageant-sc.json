@@ -1,0 +1,17 @@
+{
+    "version": "0.76.65",
+    "url": "http://www.smartcard-auth.de/download/pageant.exe#/pageant-sc.exe",
+    "bin": "pageant-sc.exe",
+    "hash": "f7ff1e7d9b8914d842bc13b7869e04f2d199e13878a791acaeefd40ab6718629",
+    "checkver": {
+        "url": "https://www.smartcard-auth.de/download-en.html",
+        "re": "\\(Version (?<version>[\\d.]+),"
+    },
+    "autoupdate": {
+        "url": "http://www.smartcard-auth.de/download/pageant.exe#/pageant-sc.exe",
+        "hash": {
+            "url": "https://www.smartcard-auth.de/download-en.html",
+            "find": "sha256: ([A-Fa-f\\d]{64})"
+        }
+    }
+}
