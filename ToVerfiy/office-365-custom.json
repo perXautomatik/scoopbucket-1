@@ -1,10 +1,10 @@
 {
-    "version": "14931-20120",
+    "version": "16327-20214",
     "description": "Family of client software, server software and services developed by Microsoft. This package includes custom config file.",
     "homepage": "https://www.office.com/",
     "license": "Proprietary",
-    "url": "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_14931-20120.exe#/dl.7z",
-    "hash": "2e32a3b52c97b46016a3938e99122d6d931e94e5d9f650fa16b5946c46a775a8",
+    "url": "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_16327-20214.exe#/dl.7z",
+    "hash": "d84ece99aac1171a3aef0b39e9673efa3f4d2532163a2d671d8ac0245a0f16b8",
     "pre_install": [
         "$null, $bucket = find_manifest($app)",
         "$bucketdir = Find-BucketDirectory($bucket)",
