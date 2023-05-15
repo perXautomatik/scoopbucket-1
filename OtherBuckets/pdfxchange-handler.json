@@ -1,0 +1,29 @@
+{
+    "version": "9.2.359.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://downloads.pdf-xchange.com/EditorV9.x64.msi",
+            "hash": "30260d5b253c0f25e1ff8d85c56e65c513a1a9399fb9a5e4702bebb4c9ec2c7b"
+        }
+    },
+    "installer": {
+        "script": [
+            "regsvr32 /s \"$dir\\XCShInfo.x86.dll\"",
+            "regsvr32 /s \"$dir\\XCShInfo.x64.dll\""
+        ]
+    },
+    "uninstaller": {
+        "script": [
+            "regsvr32 /u /s \"$dir\\XCShInfo.x86.dll\"",
+            "regsvr32 /u /s \"$dir\\XCShInfo.x64.dll\""
+        ]
+    },
+    "extract_dir": "Tracker Software/Shell Extensions",
+    "checkver": {
+        "url": "https://www.tracker-software.com/product/pdf-xchange-editor/history",
+        "re": "version (?<version>[\\d.]+) release"
+    },
+    "autoupdate": {
+        "url": "https://downloads.pdf-xchange.com/EditorV9.x64.msi"
+    }
+}

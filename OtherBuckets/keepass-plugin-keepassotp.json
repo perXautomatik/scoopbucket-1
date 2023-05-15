@@ -1,0 +1,23 @@
+{
+    "homepage": "https://github.com/Rookiestyle/KeePassOTP",
+    "version": "1.3.1",
+    "license": "Unknown",
+    "url": "https://github.com/Rookiestyle/KeePassOTP/releases/download/v1.3.1/KeePassOTP.plgx",
+    "hash": "a356bd45f52e8d2a86180aafabeea9a04eb81f7670b9df08e6d46114fa339286",
+    "checkver": {
+        "github": "https://github.com/Rookiestyle/KeePassOTP"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Rookiestyle/KeePassOTP/releases/download/v$version/KeePassOTP.plgx"
+    },
+    "depends": "diseq/keepass",
+    "installer": {
+        "script": [
+            "$pluginDir = New-Item -ItemType Directory \"$(appdir keepass $global)\\current\\Plugins\\KeePassOTP\"",
+            "Copy-Item \"$dir\\KeePassOTP.plgx\" \"$pluginDir\""
+        ]
+    },
+    "uninstaller": {
+        "script": "Remove-Item -Recurse \"$(appdir keepass $global)\\current\\Plugins\\KeePassOTP\""
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "version": "2.50",
+    "description": "Light-weight and easy-to-use password manager",
+    "homepage": "https://keepass.info",
+    "license": "GPL-2.0-or-later",
+    "url": "https://downloads.sourceforge.net/project/keepass/KeePass%202.x/2.50/KeePass-2.50.zip",
+    "pre_install": "if (-Not (Test-Path \"$dir\\KeePass.config.xml\")) { New-Item \"$dir\\KeePass.config.xml\" -ItemType file }",
+    "bin": "KeePass.exe",
+    "hash": "sha1:e842d0291a3a94a6ea1b71f84ce1fc4419d7551f",
+    "shortcuts": [
+        [
+            "KeePass.exe",
+            "KeePass"
+        ]
+    ],
+    "persist": [
+        "Plugins",
+        "Languages",
+        "KeePass.config.xml"
+    ],
+    "checkver": {
+        "url": "https://keepass.info/update/version2x.txt",
+        "regex": "KeePass:([\\d.]+)"
+    },
+    "autoupdate": {
+        "url": "https://downloads.sourceforge.net/project/keepass/KeePass%20$majorVersion.x/$version/KeePass-$version.zip"
+    }
+}

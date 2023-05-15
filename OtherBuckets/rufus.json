@@ -1,0 +1,9 @@
+
+{
+    "version": "2.10",
+    "url": "https://rufus.akeo.ie/downloads/rufus-2.10p.exe",
+    "bin": [
+      [ "rufus-2.10p.exe", "rufus" ]
+      ]
+    
+}
