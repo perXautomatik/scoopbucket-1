@@ -4,7 +4,7 @@ Write-Host 'Installing and configuring OSBasePackages...'
 
 'notepad2', 'Everything', 'opera-gx', 'SysInternals', 'wiztree', `
 'soundswitch', 'text-grab', 'beyondcompare', 'autohotkey', `
-'ditto','freemind', 'hardlinkshellext','irfanview' |
+'ditto','freemind', 'irfanview' |
     ForEach-Object { 
         Write-Host "Installing $_..."
         choco install -y $_
