@@ -1,7 +1,6 @@
  [submodule "AllowAccessWindowsDefender"]
 path = AllowAccessWindowsDefender
  url = https://gist.github.com/94f432c68944dfc53414bb4cc7f7a2bb
-
 [submodule "Disassembler/PowershellRoutines"]
 	path = Disassembler/PowershellRoutines
 	url = https://github.com/perXautomatik/Win10-Initial-Setup-Script.git
@@ -23,8 +22,10 @@ path = Optimize-PsReadLineHistory
 [submodule "ScoopBucket"]
 	path = ScoopBucket
 	url = https://github.com/perXautomatik/ScoopBucket
-
- [submodule "WindowsDebloat/MustHave-2018"]
+[submodule "TakeOwnerShip"]
+	path = TakeOwnerShip
+	url = https://gist.github.com/ce36fd285e8cf8eb00cf3b17e0e8d79d
+[submodule "WindowsDebloat/MustHave-2018"]
 path = WindowsDebloat/MustHave-2018
  url = https://gist.github.com/c3fe34831f6c80a094a38960aa4e9446
 
@@ -36,9 +37,9 @@ path = WindowsDebloat/OptimizationScript
 path = WindowsDebloat/reclaimWindows
  url = https://gist.github.com/alirobe/7f3b34ad89a159e6daa1
 
- [submodule "forked-sysadmin"]
-path = forked-sysadmin
- url = https://github.com/perXautomatik/PowerShell.git
+[submodule "forked-sysadmin"]
+	path = forked-sysadmin
+	url = https://github.com/perXautomatik/PowerShell.git
 
  [submodule "ini"]
 path = ini
@@ -46,12 +47,16 @@ path = ini
 [submodule "loose/postinstallScript"]
 	path = loose/postinstallScript
 	url = https://github.com/perXautomatik/Windows10-Postinstall.git
-[submodule "scoopbucket-1"]
-	path = scoopbucket-1
+
+[submodule "my-windows"]
+	path = my-windows
+	url = https://github.com/perXautomatik/my-windows
+[submodule "my-windows/scoopbucket"]
+	path = my-windows/scoopbucket
 	url = https://github.com/perXautomatik/scoopbucket-1
-[submodule "scoopbucket-presist"]
-	path = scoopbucket-presist
-	url = https://github.com/perXautomatik/ScoopBucket
+[submodule "powershellAliasesUserProfile"]
+	path = powershellAliasesUserProfile
+	url = https://gist.github.com/54cd776f5077b53aa0d4ba2bee360108
 [submodule "submodules/PowershellRoutines"]
 	path = submodules/PowershellRoutines
 	url = https://github.com/perXautomatik/Win10-Initial-Setup-Script.git
@@ -61,10 +66,10 @@ path = ini
 [submodule "submodules/postinstallScript"]
 	path = submodules/postinstallScript
 	url = https://github.com/perXautomatik/Windows10-Postinstall.git
+[submodule "tweaks-win10_reg"]
+	path = tweaks-win10_reg
+ url = https://gist.github.com/c3fe34831f6c80a094a38960aa4e9446
 [submodule "windowsAdmin"]
-	
-	[submodule "PostInstall/Optimize"]
 	branch = WindowsAdmin
 	path = windowsadmin
-	path = PostInstall/Optimize
 	url = https://github.com/perXautomatik/PowerShell-Scripts.git
