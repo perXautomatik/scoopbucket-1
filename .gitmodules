@@ -1,6 +1,7 @@
  [submodule "AllowAccessWindowsDefender"]
 path = AllowAccessWindowsDefender
  url = https://gist.github.com/94f432c68944dfc53414bb4cc7f7a2bb
+
 [submodule "Disassembler/PowershellRoutines"]
 	path = Disassembler/PowershellRoutines
 	url = https://github.com/perXautomatik/Win10-Initial-Setup-Script.git
@@ -19,6 +20,9 @@ path = GetInstalled
  [submodule "Optimize-PsReadLineHistory"]
 path = Optimize-PsReadLineHistory
  url = https://gist.github.com/aef342634e5671befb1904a1be39e56c
+[submodule "PostInstall/Optimize"]
+	path = PostInstall/Optimize
+	url = https://github.com/perXautomatik/PowerShell-Scripts.git	
 [submodule "ScoopBucket"]
 	path = ScoopBucket
 	url = https://github.com/perXautomatik/ScoopBucket
@@ -47,13 +51,19 @@ path = ini
 [submodule "loose/postinstallScript"]
 	path = loose/postinstallScript
 	url = https://github.com/perXautomatik/Windows10-Postinstall.git
+[submodule "scoopbucket"]
+	path = scoopbucket
+	url = https://github.com/perXautomatik/ScoopBucket
 
 [submodule "my-windows"]
 	path = my-windows
 	url = https://github.com/perXautomatik/my-windows
-[submodule "my-windows/scoopbucket"]
-	path = my-windows/scoopbucket
+[submodule "scoopbucket-1"]
+	path = scoopbucket-1
 	url = https://github.com/perXautomatik/scoopbucket-1
+[submodule "scoopbucket-presist"]
+	path = scoopbucket-presist
+	url = https://github.com/perXautomatik/ScoopBucket
 [submodule "powershellAliasesUserProfile"]
 	path = powershellAliasesUserProfile
 	url = https://gist.github.com/54cd776f5077b53aa0d4ba2bee360108
