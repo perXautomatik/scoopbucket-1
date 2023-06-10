@@ -1,5 +1,5 @@
 {
-    "version": "3.52.29",
+    "version": "3.58.13",
     "homepage": "https://www.beeper.com/",
     "description": "An universal chat application that uninfies all your chat applications into one.",
     "license": {
@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://download.beeper.com/windows/nsis/x64#/beeper.7z",
-            "hash": "c3bd3fdd3bd6c0653a05b6bbd7113e43320ee4c41f4dfb61e09c044637748315"
+            "hash": "fc4a03e490b7d78ac87e73349c99c234661d9a7b6ac59c23a1cd4ba0778f1c49"
         }
     },
     "extract_dir": "$PLUGINSDIR",
