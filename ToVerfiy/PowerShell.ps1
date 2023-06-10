@@ -2,6 +2,8 @@
 Write-Host 'Installing and configuring PowerShell...'
 . "$PSScriptRoot\Utils.ps1"
 
+choco install powershell-core
+
 Update-Help -ErrorAction Ignore
 if((Get-PSRepository PSGallery).InstallationPolicy -ne 'Trusted') {
     Set-PSRepository -Name PSGallery -InstallationPolicy 'Trusted'
@@ -12,7 +14,8 @@ Install-Module Pscx -AllowClobber -AllowPrerelease  # Both Pscx and IntelliTect.
                                                     # or it is installed after Pscx (if not using source code)
 Install-Module ZLocation -Repository PSGallery
 Install-Module PSReadLine -Force   # Update the version of PSReadline
+        
 choco install Pester
-
+choco install echoargs
 
 

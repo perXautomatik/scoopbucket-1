@@ -42,8 +42,10 @@ Function GitConfigure {
 
     choco install git-credential-manager-for-windows -y
 
+    choco install smartgit -y
+    choco install deepgit -y
     choco install gitextensions -y
-    choco install gitkraken -y
+
 
     scoop install gh
     # scoop install hub # gh is a more recent standalone CLI (while hub is a proxy to git)
@@ -51,10 +53,10 @@ Function GitConfigure {
     # TODO: Check if already configured.
     # TODO: Remove hard coding if the information.
     if (-not (git config --global user.name)) {
-        git config --global user.name "Mark Michaelis"
+        git config --global user.name "PerXautomatik"
     }
     if (-not (git config --global user.email)) {
-        git config --global user.email "Mark@IntelliTect.com"
+        git config --global user.email "christoffer.broback@gmail.com"
     }
 
     # Confiure Misc. Diff Tools
