@@ -1,7 +1,7 @@
 {
     "version": "1.7.1",
     "description": "A GUI to manage Winget and Scoop packages",
-    "homepage": "https://www.marticliment.com/wingetui/",
+    "homepage": "https://github.com/martinet101/WingetUI",
     "license": "LGPL-2.1-or-later",
     "suggest": {
         "vcredist": "extras/vcredist"
@@ -15,9 +15,7 @@
             "WingetUI"
         ]
     ],
-    "checkver": {
-        "github": "https://github.com/marticliment/WingetUI"
-    },
+    "checkver": "github",
     "autoupdate": {
         "url": "https://github.com/martinet101/WingetUI/releases/download/$version/WingetUI.Installer.exe",
         "hash": {

@@ -14,7 +14,9 @@
         }
     },
     "bin": "npiperelay.exe",
-    "checkver": "github",
+    "checkver": {
+        "github": "https://github.com/jstarks/npiperelay"
+    },
     "autoupdate": {
         "architecture": {
             "64bit": {
@@ -26,7 +28,7 @@
         },
         "hash": {
             "url": "$baseurl/npiperelay_$version_checksums.txt",
-            "regex": "$sha256\\s+$basename"
+            "hash": "$sha256\\s+$basename"
         }
     }
   }
