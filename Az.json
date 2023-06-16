@@ -1,0 +1,26 @@
+{
+    "hash": "sha512:f9d695c985951d83cfcd7bab8356e0822802bb02f3ad9b8e87a3c45aee852f88b30d9556eb80100586128690f837c959542370ddb4c058ce780dd9d3215b0f9c",
+    "version": "10.0.0",
+    "license": {
+        "url": "https://aka.ms/azps-license",
+        "identifier": "Refer to Webpage"
+    },
+    "url": "https://www.powershellgallery.com/api/v2/Package/Az/10.0.0#/mod.nupkg",
+    "autoupdate": {
+        "url": "https://www.powershellgallery.com/api/v2/Package/Az/$version#/mod.nupkg",
+        "hash": {
+            "url": "https://www.powershellgallery.com/api/v2/Packages()?$filter=Id eq 'Az' and Version eq '$version'",
+            "regex": "<d:PackageHash>$base64<.d:PackageHash>"
+        }
+    },
+    "homepage": "https://www.powershellgallery.com/packages/Az",
+    "psmodule": {
+        "name": "Az"
+    },
+    "checkver": {
+        "regex": "(?i)<d:Version>(?<ver>[^<]+)<.d:Version>",
+        "replace": "${ver}",
+        "url": "https://www.powershellgallery.com/api/v2/Packages()?$filter=Id%20eq%20'Az'%20and%20IsLatestVersion%20eq%20true"
+    },
+    "description": "Microsoft Azure PowerShell - Cmdlets to manage resources in Azure. This module is compatible with PowerShell and Windows PowerShell. For more information about the Az module, please visit the following: https://learn.microsoft.com/powershell/azure/"
+}
