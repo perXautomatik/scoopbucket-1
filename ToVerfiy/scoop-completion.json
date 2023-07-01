@@ -1,18 +1,33 @@
 {
-    "version": "0.2.4",
-    "description": "A Scoop tab completion module for PowerShell",
+    "autoupdate": {
+        "extract_dir": "scoop-completion-$version\\src",
+        "url": "https://github.com/Moeologist/scoop-completion/archive/v$version.zip"
+    },
+    "checkver": {
+        "regex": "tags/v([\\d.]+)",
+        "url": "https://api.github.com/repos/Moeologist/scoop-completion/tags"
+    },
+    "description": "Scoop Auto Completion. Allow tab compliton for scoop commands.",
+    "extract_dir": "scoop-completion-0.2.4\\src",
+    "hash": "d24e8cdfd9c899c589fdc4296c132a114f1efd0262a62bf2627fcf6babff0f60",
     "homepage": "https://github.com/Moeologist/scoop-completion",
-    "license": "MIT",
+    "installer": {
+        "script": [
+            "Move-Item \"$dir\\src\\*\" \"$dir\" -Force",
+            "if ($PROFILE -and (Test-Path $PROFILE)) {",
+            "    Add-Content $PROFILE \"Import-Module '$scoopdir\\modules\\scoop-completion' -ErrorAction SilentlyContinue\" -Encoding Ascii",
+            "}",
+            "Remove-Item \"$dir\\bucket\", \"$dir\\src\", \"$dir\\*.md\", \"$dir\\LICENSE\" -Force -Recurse"
+        ]
+    },
+    "license": {
+        "identifier": "MIT",
+        "url": "https://github.com/Moeologist/scoop-completion/blob/master/LICENSE"
+    },
     "notes": [
         "Run following command to import scoop-completion automatically in Powershell:",
         "$dir\\add-profile-content.ps1"
     ],
-    "url": "https://github.com/Moeologist/scoop-completion/archive/v0.2.4.zip",
-    "hash": "d24e8cdfd9c899c589fdc4296c132a114f1efd0262a62bf2627fcf6babff0f60",
-    "extract_dir": "scoop-completion-0.2.4\\src",
-    "psmodule": {
-        "name": "scoop-completion"
-    },
     "post_install": [
         "Get-ChildItem -Path \"$dir\" -Filter \"scoop-completion-$version\" -Directory | Remove-Item -Force -Recurse",
         "Import-Module scoop-completion",
@@ -36,12 +51,17 @@
         "    & \"$dir\\remove-profile-content.ps1\"",
         "}"
     ],
-    "checkver": {
-        "url": "https://api.github.com/repos/Moeologist/scoop-completion/tags",
-        "regex": "tags/v([\\d.]+)"
+    "psmodule": {
+        "name": "scoop-completion"
     },
-    "autoupdate": {
-        "url": "https://github.com/Moeologist/scoop-completion/archive/v$version.zip",
-        "extract_dir": "scoop-completion-$version\\src"
-    }
+    "uninstaller": {
+        "script": [
+            "if ($PROFILE -and (Test-Path $PROFILE)) {",
+            "    $new = Get-Content $PROFILE | Where-Object { $_ -notlike 'Import-Module*scoop-completion*' }",
+            "    Set-Content $PROFILE $new -Encoding Ascii",
+            "}"
+        ]
+    },
+    "url": "https://github.com/Moeologist/scoop-completion/archive/v0.2.4.zip",
+    "version": "0.2.4"
 }
