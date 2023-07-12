@@ -1,0 +1,38 @@
+{
+  "_from": "okibcn/ScoopMaster",
+  "autoupdate": {
+    "hash": {
+      "regex": "MD5 Hash: +[\\w]{32}",
+      "url": "https://portableapps.com/apps/utilities/everything-portable"
+    },
+    "url": "https://download2.portableapps.com/portableapps/EverythingPortable/EverythingPortable_1.4.1.1024.paf.exe"
+  },
+  "bin": [
+    [
+      "EverythingPortable.exe",
+      "Everything"
+    ]
+  ],
+  "checkver": {
+    "re": "/Everything Portable/EverythingPortable_([\\d.]+(?:_Rev_[\\d.])?).paf.exe]]>",
+    "url": "https://portableapps.com/apps/utilities/everything-portable"
+  },
+  "depends": "7zip",
+  "description": "\"Everything\" is search engine that locates files and folders by filename instantly for Windows. Unlike Windows search \"Everything\" initially displays every file and folder on your computer (hence the name \"Everything\"). You type in a search filter to limit what files and folders are displayed.",
+  "hash": "b67c1c118dc29f98ba34c16290dc06b080ae464ad909fb9d77783453294460b8",
+  "homepage": "https://www.voidtools.com/",
+  "installer": {
+    "script": "7z.exe x -bb0 -bd -y \"$original_dir\\Everything-Paf#1.4.1.1024#https_portableapps.com_redir2_a_EverythingPortable_s_s_d_pa_f_EverythingPortable_1.4.1.1024.paf.exe\" -o\"$original_dir\" > \"$original_dir\\null\""
+  },
+  "license": "Freeware",
+  "persist": "Data",
+  "post_install": "Remove-Item \"$dir\\*PLUGINSDIR\", \"$dir\\EverythingPortable.paf.exe\", \"$dir\\null\" -Recurse",
+  "shortcuts": [
+    [
+      "EverythingPortable\\EverythingPortable.exe",
+      "EverythingPortable"
+    ]
+  ],
+  "url": "https://portableapps.com/redir2/?a=EverythingPortable&s=s&d=pa&f=EverythingPortable_1.4.1.1024.paf.exe",
+  "version": "1.4.1.1024"
+}
