@@ -1,12 +1,12 @@
 {
     "homepage": "https://dprint.dev",
     "description": "Pluggable and configurable code formatting platform written in Rust.",
-    "version": "0.36.1",
+    "version": "0.39.1",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/dprint/dprint/releases/download/0.36.1/dprint-x86_64-pc-windows-msvc.zip",
-            "hash": "8b86ab1663202c434e0062e0d4d48de453f5938b1aaa8f7f5803a1788f3362b3"
+            "url": "https://github.com/dprint/dprint/releases/download/0.39.1/dprint-x86_64-pc-windows-msvc.zip",
+            "hash": "6e7f87393fadd04bee062859c00f71bd7379960c15cebd673b35f3c810a0cee9"
         }
     },
     "bin": "dprint.exe",
