@@ -1,10 +1,10 @@
 {
-    "version": "2.9",
+    "version": "2.10",
     "description": "Set of utilities for managing multiple monitor setups.",
     "homepage": "http://dualmonitortool.sourceforge.net/",
     "license": "GPL-3.0-only",
-    "url": "https://downloads.sourceforge.net/project/dualmonitortool/dualmonitortool/2.9/DualMonitorTools-2.9.zip",
-    "hash": "sha1:a11016ab3a4a4d690523e30cb4578dc63cdc68e8",
+    "url": "https://downloads.sourceforge.net/project/dualmonitortool/dualmonitortool/2.10/DualMonitorTools-2.10.zip",
+    "hash": "0721e281dba716ed0e14d4ae8052d9cef2d01b1c5d09933bb61ea1341c6f3ddf",
     "pre_install": [
         "if (-not (Test-Path \"$persist_dir\\DmtMagicWords.xml\")) { New-Item \"$dir\\DmtMagicWords.xml\" -ItemType File | Out-Null }",
         "if (-not (Test-Path \"$persist_dir\\DmtSettings.xml\")) { New-Item \"$dir\\DmtSettings.xml\" -ItemType File | Out-Null }"
