@@ -1,0 +1,27 @@
+{
+    "version": "1.0.97",
+    "description": "An open-source app for configuring and fine-tuning Windows 10 & Windows 11.",
+    "homepage": "https://github.com/Sophia-Community/SophiApp/",
+    "license": "MIT",
+    "url": "https://github.com/Sophia-Community/SophiApp/releases/download/1.0.97/SophiApp.zip",
+    "hash": "d510c8bcb40c646883007c6d9f0524d52592178eedfd18f11c43769fc94d2cab",
+    "extract_dir": "SophiApp",
+    "shortcuts": [
+        [
+            "SophiApp.exe",
+            "SophiApp"
+        ]
+    ],
+    "persist": [
+        "SophiApp.exe.config",
+        "Logs"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "url": "https://github.com/Sophia-Community/SophiApp/releases/download/$version/SophiApp.zip",
+        "hash": {
+            "url": "https://github.com/Sophia-Community/SophiApp/releases/",
+            "find": "<code>$sha256</code>"
+        }
+    }
+}
