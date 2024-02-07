@@ -1,0 +1,7 @@
+*.sublime-workspace
+*~
+._*
+page.html
+checkver-*.html
+*.sfv
+#*.sha256
