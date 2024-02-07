@@ -1,0 +1,14 @@
+{
+    "version": "2023.05.22.00",
+    "url": "https://github.com/facebook/watchman/releases/download/v2023.05.22.00/watchman-v2023.05.22.00-windows.zip",
+    "hash": "75561711c3833f724444cb36a13580da660bcd73595389d6c7e18d7c74dbce10",
+    "bin": "watchman.exe",
+    "extract_dir": "watchman-v2023.05.22.00-windows/bin",
+    "checkver": {
+        "github": "https://github.com/facebook/watchman"
+    },
+    "autoupdate": {
+        "url": "https://github.com/facebook/watchman/releases/download/v$version/watchman-v$version-windows.zip",
+        "extract_dir": "watchman-v$version-windows/bin"
+    }
+}
