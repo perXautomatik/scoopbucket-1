@@ -1,11 +1,11 @@
 {
-    "version": "5.37",
+    "version": "5.39",
     "description": "Autorun Organizer. Free Startup Manager for Windows",
     "homepage": "https://www.chemtable.com/autorun-organizer.htm",
     "license": "Freeware",
     "changelog": "https://www.chemtable.com/version-history.htm?prod_id=Autorun%20Organizer",
     "url": "https://www.chemtable.com/files/ao3/autorun-organizer-setup.exe#/setup.7z",
-    "hash": "36f16248f1ac22938058ffb963d178223cf96fce25f3104eebe58ccc787a1949",
+    "hash": "5181490fd31cc3d2a5932da349f55614c06885186bf4876f8aae3214ca97f778",
     "bin": "AutorunOrganizer.exe",
     "innosetup": true,
     "pre_install": [
