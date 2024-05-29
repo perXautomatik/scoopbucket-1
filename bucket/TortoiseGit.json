@@ -39,6 +39,32 @@
         "For file associations, run '$dir\\tortoisegit-install-tools.reg'",
         "Before uninstalling TortoiseGit, run '$dir\\tortoisegit-uninstall.reg' "
     ],
+    "persist" :[        
+        "bin\\snippet.txt",
+        "bin\\autolist.txt",
+        "Diff-Scripts"
+    ],
+    "pre_install": [
+        "$migration = $true",
+        "$visibleUserAccounts = Get-LocalUser | Where-Object { $_.Enabled -eq $true }",
+        "if ($global -and $visibleUserAccounts.Count -gt 1) { $migration = $false }",
+        "",
+        "$appdataPath = \"$HOME\\AppData\\Roaming\\TortoiseGit\"",
+        "if ((Test-Path -Path $appdataPath\\*) -and (!(Test-Path -Path $persist_dir\\*)) -and $migration) {",
+        "    Write-Warning \"Migrating data from $appdataPath to $persist_dir (this may take a while)\"",
+        "    New-Item -Type Directory -Path $persist_dir | Out-Null",
+        "    Copy-Item -Recurse -Force $appdataPath\\* $persist_dir\\",
+        "} elseif (!($migration)) {",
+        "    Write-Warning \"A global Scoop installation was detected with multiple user accounts. Please see the notes at the end of the install process.\"",
+        "}",
+        "",
+        "'ignorecomments.txt', 'regexfilters.ini', 'TortoiseGitMerge-RibbonSettings','1033.dic', '2048.dic', 'autolist.txt', 'snippet.txt' | ForEach-Object {",
+        "   $inPer = !(Test-Path -Path $persist_dir\\$_)",
+        "    if ($inPer) {",
+        "        New-Item -Type File $dir/$_ | Out-Null",
+        "    }",
+        "}"
+    ],
     "post_install": [
         "$path = 'HKCU:\\Software\\TortoiseGit'",
         "if (!(Test-path \"$path\")) {",

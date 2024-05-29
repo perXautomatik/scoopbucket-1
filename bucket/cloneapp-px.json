@@ -10,6 +10,10 @@
             "CloneApp"
         ]
     ],
+    "persist":[
+        "Backup",
+        "Plug-ins"
+    ],
     "checkver": {
         "github": "https://github.com/mirinsoft/CloneApp"
     },

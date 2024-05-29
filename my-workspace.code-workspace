@@ -1,20 +1,3 @@
-﻿{
-    "settings":  {
-                     "breadcrumbs.enabled":  true,
-                     "editor.autoClosingBrackets":  "beforeWhitespace"
-                 },
-    "folders":  [
-                    {
-                        "name":  "Folder0",
-                        "path":  "B:/Users/chris/scoop/buckets/Ny mapp/scoopbucket-1/.git"
-                    },
-                    {
-                        "name":  "Folder1",
-                        "path":  "B:/Users/chris/scoop/buckets/Ny mapp/perXautomatik/.git"
-                    },
-                    {
-                        "name":  "Folder2",
-                        "path":  "B:/Users/chris/scoop/buckets/Ny mapp/.git"
-                    }
-                ]
+{
+	"folders": []
 }
