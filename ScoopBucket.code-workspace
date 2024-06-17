@@ -9,5 +9,10 @@
 		"powershell.codeFormatting.preset": "OTBS",
 		"powershell.codeFormatting.alignPropertyValuePairs": true,
 		"powershell.codeFormatting.ignoreOneLineBlock": true
+	},
+	"extensions": {
+		"recommendations": [
+			"cnshenj.vscode-task-manager"
+		]
 	}
 }

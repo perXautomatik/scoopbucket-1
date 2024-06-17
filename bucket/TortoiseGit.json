@@ -21,6 +21,7 @@
     },
     "bin": [
         "bin\\TortoiseGitUDiff.exe",
+        "bin\\TortoiseGitMerge.exe",
         "bin\\TortoisePlink.exe",
         "bin\\TortoiseGitProc.exe"
     ],
@@ -65,14 +66,28 @@
         "    }",
         "}"
     ],
-    "post_install": [
+    "post_install": [        
         "$path = 'HKCU:\\Software\\TortoiseGit'",
         "if (!(Test-path \"$path\")) {",
         "    New-Item $path | Out-Null",
         "    New-ItemProperty -Path $path -Name 'VersionCheck' -PropertyType DWord -Value 0 -Force | Out-Null",
         "    New-ItemProperty -Path $path -Name 'MsysGit' -PropertyType String -Value \"$env:GIT_INSTALL_ROOT\\bin\" -Force | Out-Null",
         "}",
+        
         "$bucketdir = Find-BucketDirectory($bucket)",
+        "",
+            "ensure \"$dir\\data\\ProgramData\" | Out-Null",
+            "ensure \"$dir\\data\\AppData\" | Out-Null",
+            "ensure \"$dir\\data\\LocalAppData\" | Out-Null",
+            "ensure \"$dir\\data\\UserProfile\" | Out-Null",
+            "ensure \"$dir\\data\\PublicProfile\" | Out-Null",
+            "",
+            "$companyname = 'Microsoft'",
+            "",
+            "ensure \"$env:LocalAppData\\$companyname\" | Out-Null",
+            "if (-not (Test-Path \"$env:LocalAppData\\$companyname\\BingWallpaperApp\")) {",
+            "    cmd.exe /c mklink /j \"$env:LocalAppData\\$companyname\\BingWallpaperApp\" \"$dir\\data\\LocalAppData\"",
+            "}",
         "$bucketdir = (($bucketdir | split-path -Parent) | Split-Path -Parent) | Join-Path -ChildPath 'perXautomatik'",
         "$escdir = $dir -replace \"\\\\\",\"\\\\\"",
         "(gc \"$bucketdir\\scripts\\tortoisegit\\tortoisegit-install.reg.templ\") | % {$_ -replace \"%TGITHOME%\",\"$escdir\"} | out-file -enc utf8 \"$dir\\tortoisegit-install.reg\"",
