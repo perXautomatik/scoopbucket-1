@@ -1,36 +1,36 @@
 {
-  "autoupdate": {
-    "url": "https://files.chemtable.com/ao/autorun-organizer-setup.exe"
-  },
-  "bin": "AutorunOrganizer.exe",
-  "changelog": "https://www.chemtable.com/version-history.htm?prod_id=Autorun%20Organizer",
-  "checkver": {
-    "regex": "<title>Autorun Organizer ([\\d.]+)",
-    "url": "https://www.chemtable.com/autorun-organizer.htm"
-  },
-  "description": "Autorun Organizer. Free Startup Manager for Windows",
-  "hash": "4774246c9200a6f4de51d8280cd41fd586950e3b606c2e8b9166b52a7df080bf",
-  "homepage": "https://www.chemtable.com/autorun-organizer.htm",
-  "innosetup": true,
-  "license": "Freeware",
-  "pre_install": [
-    "if([System.Environment]::Is64BitOperatingSystem)",
-    "{",
-    "   Set-Location -Path \"$dir\"",
-    "   Get-ChildItem \"*,1*\" | Rename-Item -NewName {$_.name -replace ',1',''}",
-    "}",
-    "else",
-    "{",
-    "   Set-Location -Path \"$dir\"",
-    "   Get-ChildItem \"*,2*\" | Rename-Item -NewName {$_.name -replace ',2',''}",
-    "}"
-  ],
-  "shortcuts": [
-    [
-      "AutorunOrganizer.exe",
-      "Autorun Organizer"
-    ]
-  ],
+    "autoupdate": {
+        "url": "https://files.chemtable.com/ao/autorun-organizer-setup.exe"
+    },
+    "bin": "AutorunOrganizer.exe",
+    "changelog": "https://www.chemtable.com/version-history.htm?prod_id=Autorun%20Organizer",
+    "checkver": {
+        "regex": "<title>Autorun Organizer ([\\d.]+)",
+        "url": "https://www.chemtable.com/autorun-organizer.htm"
+    },
+    "description": "Autorun Organizer. Free Startup Manager for Windows",
+    "hash": "efae1d2be6e0347b744afb1f3848b99e408bdd28c3931d8738f22e2bc3af09e8",
+    "homepage": "https://www.chemtable.com/autorun-organizer.htm",
+    "innosetup": true,
+    "license": "Freeware",
+    "pre_install": [
+        "if([System.Environment]::Is64BitOperatingSystem)",
+        "{",
+        "   Set-Location -Path \"$dir\"",
+        "   Get-ChildItem \"*,1*\" | Rename-Item -NewName {$_.name -replace ',1',''}",
+        "}",
+        "else",
+        "{",
+        "   Set-Location -Path \"$dir\"",
+        "   Get-ChildItem \"*,2*\" | Rename-Item -NewName {$_.name -replace ',2',''}",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "AutorunOrganizer.exe",
+            "Autorun Organizer"
+        ]
+    ],
     "url": "https://files.chemtable.com/ao/autorun-organizer-setup.exe",
-  "version": "5.40"
+    "version": "5.41"
 }
