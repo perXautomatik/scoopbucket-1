@@ -1,24 +1,24 @@
 {
-  "autoupdate": {
-    "url": "https://github.com/newren/git-filter-repo/archive/v$version.zip"
-  },
-  "bin": [
-    [
-      "git_filter_repo.py",
-      "git-filter-repo"
-    ]
-  ],
-  "checkver": "github",
-  "description": "git filter-branch replacement",
-  "hash": "b8c76eac0a20a0bac47d0321c5093f4a5d50f6312273c3f3a7d9a60791378212",
-  "homepage": "https://github.com/newren/git-filter-repo",
-  "license": "MIT",
-  "post_install": "Copy-Item \"$dir\\git-filter-repo\" \"$dir\\contrib\\filter-repo-demos\" | Out-Null",
-  "pre_install": "Move-Item \"$dir\\git-filter-repo-*\\*\" \"$dir\"; Remove-Item \"$dir\\git-filter-repo-*\"",
-  "suggest": {
-    "Git": "git",
-    "Python 3": "python"
-  },
-  "url": "https://github.com/newren/git-filter-repo/archive/v2.38.0.zip",
-  "version": "2.38.0"
+    "autoupdate": {
+        "url": "https://github.com/newren/git-filter-repo/archive/v$version.zip"
+    },
+    "bin": [
+        [
+            "git_filter_repo.py",
+            "git-filter-repo"
+        ]
+    ],
+    "checkver": "github",
+    "description": "git filter-branch replacement",
+    "hash": "d8c102590f8167b58f04a548eaf7e87073711b55c8f1bfba046c643d1e1eaac5",
+    "homepage": "https://github.com/newren/git-filter-repo",
+    "license": "MIT",
+    "post_install": "Copy-Item \"$dir\\git-filter-repo\" \"$dir\\contrib\\filter-repo-demos\" | Out-Null",
+    "pre_install": "Move-Item \"$dir\\git-filter-repo-*\\*\" \"$dir\"; Remove-Item \"$dir\\git-filter-repo-*\"",
+    "suggest": {
+        "Git": "git",
+        "Python 3": "python"
+    },
+    "url": "https://github.com/newren/git-filter-repo/archive/v2.45.0.zip",
+    "version": "2.45.0"
 }
