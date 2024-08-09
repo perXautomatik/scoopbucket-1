@@ -84,8 +84,12 @@
         "if (!(Test-Path \"$persist_dir\\BC4Key.txt\")) { New-Item \"$dir\\BC4Key.txt\" -Force | Out-Null }"
     ],
     "persist": [
-        "BCSessions.xml",
-        "BCState.xml"
+        "BCCommands.xml",
+        "BCPreferences.xml",
+	"BCColors.xml",
+	"BCFileFormats.xml",
+	"BCProfiles.xml",
+	"BC4Key.txt"	
     ],
     "shortcuts": [
         [
