@@ -1,0 +1,16 @@
+{
+    "version": "1.0.0.9",
+    "description": "Simple module to generate interactive console menus (like yeoman).",
+    "homepage": "https://github.com/chrisseroka/ps-menu",
+    "license": "MIT",
+    "notes": [
+        "Add the following to your PowerShell profile to load PS-Menu automatically:",
+        "Import-Module PS-Menu"
+    ],
+    "extract_dir": "ps-menu-master",
+    "url": "https://github.com/chrisseroka/ps-menu/archive/refs/heads/master.zip",
+    "hash": "acf2a3b608213e4761a5bc39b2888169b8ddee624b968089bbde8bb06b6a6061",
+    "psmodule": {
+        "name": "PS-Menu"
+    }
+}
