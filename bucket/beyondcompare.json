@@ -1,62 +1,37 @@
 {
-    "_from": "okibcn/ScoopMaster",
-    "architecture": {
-        "32bit": {
-            "hash": "5b14f35bf4219fdcc138a4a6ed8f20605d455027a94a50ab37db64e53153d141",
-            "installer": {
-                "script": [
-                    "@('7z,1.dll', 'BCompare,1.exe', 'BCompare,1.tr', 'BCUnRAR,1.dll', 'mscoree,1.dll', 'PdfToText,1.exe') | ForEach-Object {",
-                    "    $newName = $_.Replace(',1','')",
-                    "    Rename-Item \"$dir\\$_\" \"$dir\\$newName\"",
-                    "}",
-                    "@('7z,2.dll', 'BCompare,2.exe', 'BCompare,2.tr', 'BCUnRAR,2.dll', 'mscoree,2.dll', 'PdfToText,2.exe') | ForEach-Object {",
-                    "    Remove-Item \"$dir\\$_\" -Force",
-                    "}"
-                ]
-            },
-            "url": "https://www.scootersoftware.com/BCompare-4.4.7.28397.exe"
-        },
-        "64bit": {
-            "hash": "089b8acbe228e876f4847132ec71fe256b134703e2e6205619b28905cb69f881",
-            "installer": {
-                "script": [
-                    "@('7z,1.dll', 'BCompare,1.exe', 'BCompare,1.tr', 'BCUnRAR,1.dll', 'mscoree,1.dll', 'PdfToText,1.exe') | ForEach-Object {",
-                    "    Remove-Item \"$dir\\$_\" -Force",
-                    "}",
-                    "@('7z,2.dll', 'BCompare,2.exe', 'BCompare,2.tr', 'BCUnRAR,2.dll', 'mscoree,2.dll', 'PdfToText,2.exe') | ForEach-Object {",
-                    "    $newName = $_.Replace(',2','')",
-                    "    Rename-Item \"$dir\\$_\" \"$dir\\$newName\"",
-                    "}"
-                ]
-            },
-            "url": "https://www.scootersoftware.com/BCompare-4.4.7.28397_x64.msi"
-        }
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://www.scootersoftware.com/BCompare-$version.exe"
-            },
-            "64bit": {
-                "url": "https://www.scootersoftware.com/BCompare-$version_x64.msi"
-            }
-        }
-    },
-    "bin": "Bcomp.exe",
-    "checkver": {
-        "regex": "BCompare-([\\d.]+)\\.exe",
-        "url": "https://www.scootersoftware.com/download.php?"
-    },
-    "depends": "innounp",
+    "version": "4.4.7.28397",
     "description": "Beyond Compare is a multi-platform utility that combines directory compare and file compare functions in one package. Use it to manage source code, keep directories in sync, compare program output, etc.",
-    "extract_dir": "Beyond Compare 4",
     "homepage": "https://www.scootersoftware.com",
-    "innosetup": true,
     "license": {
         "identifier": "Shareware",
         "url": "https://www.scootersoftware.com/index.php?zz=kb_licensev4"
     },
-    "notes": "Run '$dir\\install-context.reg' to register BCompare for handle right-click context menu.",
+    "notes": "Add Beyond Compare as a context menu option by running: '$dir\\install-context.reg'",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.scootersoftware.com/files/BCompare-4.4.7.28397_x64.msi",
+            "hash": "089b8acbe228e876f4847132ec71fe256b134703e2e6205619b28905cb69f881"
+        },
+        "32bit": {
+            "url": "https://www.scootersoftware.com/files/BCompare-4.4.7.28397_x86.msi",
+            "hash": "7d722749e18309212f7d483b80e992b1c0f35dc437b93be6133cfe6b03574307"
+        }
+    },
+    "extract_dir": "Beyond Compare 4",
+    "bin": [
+        "Bcomp.exe",
+        "BCompare.exe"
+    ],
+    "shortcuts": [
+        [
+            "BCompare.exe",
+            "Beyond Compare 4"
+        ],
+        [
+            "BCClipboard.exe",
+            "Clipboard Compare"
+        ]
+    ],
     "post_install": [
         "$script_path = \"$bucketsdir\\$bucket\\scripts\\$app\"",
         "$dir_escaped = \"$dir\".Replace('\\', '\\\\')",
@@ -91,22 +66,24 @@
 	"BCProfiles.xml",
 	"BC4Key.txt"	
     ],
-    "shortcuts": [
-        [
-            "BCompare.exe",
-            "Beyond Compare 4"
-        ],
-        [
-            "BCClipboard.exe",
-            "Clipboard Compare"
-        ]
-    ],
     "uninstaller": {
         "script": [
             "Get-ChildItem \"$dir\\*\" -Include 'BCState.xml', 'BCSessions.xml', 'BCCommands.xml', 'BCPreferences.xml', 'BCColors.xml', 'BCFileFormats.xml', 'BCProfiles.xml' `",
             "| Where-Object LinkType -eq $null | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
         ]
     },
-    "url": "https://www.scootersoftware.com/BCompare-4.4.6.27483.exe",
-    "version": "4.4.7.28397"
+    "checkver": {
+        "url": "https://www.scootersoftware.com/kb/dl4_winalternate",
+        "regex": "BCompare-([\\d.]+)_x64\\.msi"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.scootersoftware.com/files/BCompare-$version_x64.msi"
+            },
+            "32bit": {
+                "url": "https://www.scootersoftware.com/files/BCompare-$version_x86.msi"
+            }
+        }
+    }
 }
