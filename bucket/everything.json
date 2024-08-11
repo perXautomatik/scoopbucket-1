@@ -1,35 +1,43 @@
 {
-    "architecture": {
-        "32bit": {
-            "hash": "297196b7a8eff8c31e2644e258d7f62bdc33c0270c214dd7f6635df9c84f9dbe",
-            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x86.zip"
-        },
-        "64bit": {
-            "hash": "8efd75d62eaf73d616ffc1de7ba1e88abe1742dce800aa6b4ddb81e11e5fed79",
-            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x64.zip"
-        }
-    },
-    "autoupdate": {
-        "architecture": {
-            "32bit": {
-                "url": "https://www.voidtools.com/Everything-$version.x86.zip"
-            },
-            "64bit": {
-                "url": "https://www.voidtools.com/Everything-$version.x64.zip"
-            }
-        },
-        "hash": {
-            "url": "$baseurl/Everything-$version.sha256"
-        }
-    },
-    "bin": "Everything.exe",
-    "checkver": "Download Everything ([\\d.]+)",
+    "version": "1.4.1.1026"
     "description": "Locate files and folders by name instantly.",
     "homepage": "https://www.voidtools.com",
     "license": "MIT",
     "notes": [
         "To add Everything to right-click context menu, run:",
         "reg import \"$dir\\install-context.reg\""
+    ],
+    "architecture": {
+        "64bit": {
+            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x64.zip"
+            "hash": "8efd75d62eaf73d616ffc1de7ba1e88abe1742dce800aa6b4ddb81e11e5fed79",
+        },
+        "32bit": {
+            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x86.zip"
+            "hash": "297196b7a8eff8c31e2644e258d7f62bdc33c0270c214dd7f6635df9c84f9dbe",
+        },
+        "arm64": {
+            "url": "https://www.voidtools.com/Everything-1.4.1.1024.ARM64.zip",
+            "hash": "b3ce6df443270266b067c90e5c66b619372bc618c27d7b0aa57b0e19a8440f89"
+        }
+    },
+    "pre_install": [
+        "# for arm64",
+        "if ($architecture -eq 'arm64') { Rename-Item \"$dir\\EverythingARM64.exe\" -NewName 'Everything.exe' }",
+        "# END",
+        "ensure \"$persist_dir\" | Out-Null",
+        "if (Test-Path \"$dir\\Everything64.exe\") { Rename-Item \"$dir\\Everything64.exe\" 'Everything.exe' }",
+        "if (!(Test-Path \"$persist_dir\\Everything.ini\")) { Start-Process -Wait \"$dir\\Everything.exe\" -Args @('-install-config null') }",      
+        "'Bookmarks.csv', 'Everything.lng', 'Everything.ini', 'Filters.csv', 'Plugins.ini', 'Run History.csv', 'Search History.csv' | %{ if (!(Test-Path \"$persist_dir\\$_\")) { New-Item \"$dir\\$_\" -Force | Out-Null } }"
+    ],
+    "persist": [
+        'Bookmarks.csv',
+	'Everything.lng', 
+	'Everything.ini', 
+	'Filters.csv', 
+	'Plugins.ini', 
+	'Run History.csv', 
+	'Search History.csv'        
     ],
     "post_install": [
         "$app_path = \"$dir\\Everything.exe\".Replace('\\', '\\\\')",
@@ -44,15 +52,16 @@
         "    $content | Set-Content -Path \"$dir\\$_\" -Encoding ascii",
         "}"
     ],
-    "pre_install": [
-        "ensure \"$persist_dir\" | Out-Null",
-        "Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Everything.lnk\"",
-        "if (Test-Path \"$dir\\Everything64.exe\") { Rename-Item \"$dir\\Everything64.exe\" 'Everything.exe' }",
-        "if (!(Test-Path \"$persist_dir\\Everything.ini\")) { Start-Process -Wait \"$dir\\Everything.exe\" -Args @('-install-config null') }",
-        "Get-ChildItem \"$persist_dir\\*\" -Include 'Bookmarks*.csv', 'Everything.lng', 'Everything*.db', 'Everything*.ini', 'Filters*.csv', 'Plugins*.ini', 'Run History*.csv', 'Search History*.csv' | Copy-Item -Destination \"$dir\" -ErrorAction SilentlyContinue",
-        "Remove-Item -Recurse \"$Env:Public\\Desktop\\Everything.lnk\"",
-        "Copy-Item \"$bucketsdir\\versions\\scripts\\everything\\uninstall-context.reg\" \"$dir\\\""
+    "bin": "Everything.exe",
+    "shortcuts": [
+        [
+            "Everything.exe",
+            "Everything"
+        ]
     ],
+    "uninstaller": {
+        "script": "Start-Process \"$dir\\Uninstall.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null"
+    },
     "pre_uninstall": [
         "Stop-Process -Name 'everything' -Force -ErrorAction SilentlyContinue",
         "$service_installed_in_current_dir_via_scoop = (sc.exe qc Everything) -match $dir.Replace('\\', '\\\\')",
@@ -67,16 +76,22 @@
         "    }",
         "}",
         "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }",
+	"Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Everything.lnk\"",
+	"Remove-Item -Recurse \"$Env:Public\\Desktop\\Everything.lnk\"",
         "Get-ChildItem \"$dir\\*\" -Include 'Bookmarks.csv', 'Everything.db', 'Everything.ini', 'Filters.csv', 'Search History.csv' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
     ],
-    "shortcuts": [
-        [
-            "Everything.exe",
-            "Everything"
-        ]
-    ],
-    "uninstaller": {
-        "script": "Start-Process \"$dir\\Uninstall.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null"
-    },
-    "version": "1.4.1.1026"
+    "checkver": "Download Everything ([\\d.]+)",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://www.voidtools.com/Everything-$version.x64.zip"
+            },
+            "32bit": {
+                "url": "https://www.voidtools.com/Everything-$version.x86.zip"
+            }
+        },
+        "hash": {
+            "url": "$baseurl/Everything-$version.sha256"
+        }
+    }
 }
