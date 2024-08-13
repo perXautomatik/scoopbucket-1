@@ -48,7 +48,6 @@
         "}"
     ],
     "pre_install": [
-        "Expand-InnoArchive -Path \"$dir\\$fname\" -Switches \"-a\"  -Removal",
         "if (!(Test-Path \"$persist_dir\\BCState.xml\")) { New-Item \"$dir\\BCState.xml\" -Force | Out-Null }",
         "if (!(Test-Path \"$persist_dir\\BCSessions.xml\")) { New-Item \"$dir\\BCSessions.xml\" -Force | Out-Null }",
         "if (!(Test-Path \"$persist_dir\\BCCommands.xml\")) { New-Item \"$dir\\BCCommands.xml\" -Force | Out-Null }",
@@ -64,12 +63,15 @@
 	"BCColors.xml",
 	"BCFileFormats.xml",
 	"BCProfiles.xml",
-	"BC4Key.txt"	
+	"BC4Key.txt",
+	"helpers",
+	'BCState.xml',
+	'BCSessions.xml'	
     ],
     "uninstaller": {
         "script": [
             "Get-ChildItem \"$dir\\*\" -Include 'BCState.xml', 'BCSessions.xml', 'BCCommands.xml', 'BCPreferences.xml', 'BCColors.xml', 'BCFileFormats.xml', 'BCProfiles.xml' `",
-            "| Where-Object LinkType -eq $null | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
+            "| Where-Object LinkType -eq $null | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -force"
         ]
     },
     "checkver": {
