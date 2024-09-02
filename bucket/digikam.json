@@ -14,6 +14,10 @@
         "digikam.exe",
         "showfoto.exe"
     ],
+    "persist": [
+        "data",
+        "plugins"
+    ],
     "shortcuts": [
         [
             "digikam.exe",
