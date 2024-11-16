@@ -1,46 +1,46 @@
 {
-  "architecture": {
-    "64bit": {
-      "hash": "5a84d705e7725c25820927ed98d4bb32b838b0a4f1c112c69ec24a562a00056f",
-      "url": "https://download.kde.org/stable/digikam/8.4.0/digiKam-8.4.0-Qt6-Win64.exe#/dl.7z"
-    }
-  },
-  "autoupdate": {
     "architecture": {
-      "64bit": {
-        "url": "https://download.kde.org/stable/digikam/$version/digiKam-$version-Qt6-Win64.exe#/dl.7z"
-      }
+        "64bit": {
+            "hash": "a1ad62f4dad7afdab83f964ff29344731a040242ab4bba440efa15b696dac562",
+            "url": "https://download.kde.org/stable/digikam/8.5.0/digiKam-8.5.0-Qt6-Win64.exe#/dl.7z"
+        }
     },
-    "hash": {
-      "regex": "$sha256",
-      "url": "$url.mirrorlist"
-    }
-  },
-  "bin": [
-    "digikam.exe",
-    "showfoto.exe"
-  ],
-  "checkver": {
-    "regex": "digiKam-([\\d.]+)(-Qt6)?-Win64",
-    "url": "https://www.digikam.org/download/"
-  },
-  "description": "Professional Photo Management",
-  "homepage": "https://www.digikam.org",
-  "license": "GPL-3.0-or-later",
-  "persist": [
-    "data",
-    "plugins"
-  ],
-  "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse",
-  "shortcuts": [
-    [
-      "digikam.exe",
-      "digiKam"
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://download.kde.org/stable/digikam/$version/digiKam-$version-Qt6-Win64.exe#/dl.7z"
+            }
+        },
+        "hash": {
+            "regex": "$sha256",
+            "url": "$url.mirrorlist"
+        }
+    },
+    "bin": [
+        "digikam.exe",
+        "showfoto.exe"
     ],
-    [
-      "showfoto.exe",
-      "Showfoto"
-    ]
-  ],
-  "version": "8.4.0"
+    "checkver": {
+        "regex": "digiKam-([\\d.]+)(-Qt6)?-Win64",
+        "url": "https://www.digikam.org/download/"
+    },
+    "description": "Professional Photo Management",
+    "homepage": "https://www.digikam.org",
+    "license": "GPL-3.0-or-later",
+    "persist": [
+        "data",
+        "plugins"
+    ],
+    "pre_install": "Remove-Item \"$dir\\`$*\", \"$dir\\Uninstall*\" -Recurse",
+    "shortcuts": [
+        [
+            "digikam.exe",
+            "digiKam"
+        ],
+        [
+            "showfoto.exe",
+            "Showfoto"
+        ]
+    ],
+    "version": "8.5.0"
 }
