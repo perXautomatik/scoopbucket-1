@@ -1,5 +1,5 @@
 {
-    "version": "1.4.1.1026",
+    "version": "1.4.1.1027",
     "description": "Locate files and folders by name instantly.",
     "homepage": "https://www.voidtools.com",
     "license": "MIT",
@@ -9,26 +9,26 @@
     ],
     "architecture": {
         "64bit": {
-            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x64.zip",
-            "hash": "8efd75d62eaf73d616ffc1de7ba1e88abe1742dce800aa6b4ddb81e11e5fed79"
+            "url": "https://www.voidtools.com/Everything-1.4.1.1027.x64.zip",
+            "hash": "eaaf98041a25d09b1677f72a1c326a0e20acfd70fa550f7ad1cde8363b69cfcb"
         },
         "32bit": {
-            "url": "https://www.voidtools.com/Everything-1.4.1.1026.x86.zip",
-            "hash": "297196b7a8eff8c31e2644e258d7f62bdc33c0270c214dd7f6635df9c84f9dbe"
+            "url": "https://www.voidtools.com/Everything-1.4.1.1027.x86.zip",
+            "hash": "72d35c18b627750d4abf6b28d9ec6c5b270e0144512cedecf4bbb3f701605f34"
         },
         "arm64": {
-            "url": "https://www.voidtools.com/Everything-1.4.1.1024.ARM64.zip",
-            "hash": "b3ce6df443270266b067c90e5c66b619372bc618c27d7b0aa57b0e19a8440f89"
+            "url": "https://www.voidtools.com/Everything-1.4.1.1027.ARM64.zip",
+            "hash": "aba870cebf582adfd5fa5fd2c32cd1275d38dff66bc0a13f9e521fea25521772"
         }
     },
     "persist": [
-        'Bookmarks.csv',
-	'Everything.lng', 
-	'Everything.ini', 
-	'Filters.csv', 
-	'Plugins.ini', 
-	'Run History.csv', 
-	'Search History.csv'        
+        "Bookmarks.csv",
+        "Everything.lng",
+        "Everything.ini",
+        "Filters.csv",
+        "Plugins.ini",
+        "Run History.csv",
+        "Search History.csv"
     ],
     "uninstaller": {
         "script": "Start-Process \"$dir\\Uninstall.exe\" -ArgumentList '/S' -Wait -Verb RunAs | Out-Null"
@@ -76,8 +76,8 @@
         "    }",
         "}",
         "if ($cmd -eq 'uninstall') { reg import \"$dir\\uninstall-context.reg\" }",
-	"Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Everything.lnk\"",
-	"Remove-Item -Recurse \"$Env:Public\\Desktop\\Everything.lnk\"",
+        "Remove-Item -Recurse \"$([Environment]::GetFolderPath('commonstartmenu'))\\Programs\\Everything.lnk\"",
+        "Remove-Item -Recurse \"$Env:Public\\Desktop\\Everything.lnk\"",
         "Get-ChildItem \"$dir\\*\" -Include 'Bookmarks.csv', 'Everything.db', 'Everything.ini', 'Filters.csv', 'Search History.csv' | Copy-Item -Destination \"$persist_dir\" -ErrorAction SilentlyContinue -Force"
     ],
     "checkver": "Download Everything ([\\d.]+)",
