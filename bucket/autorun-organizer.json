@@ -9,7 +9,7 @@
         "url": "https://www.chemtable.com/autorun-organizer.htm"
     },
     "description": "Autorun Organizer. Free Startup Manager for Windows",
-    "hash": "ed197758db67d8eb335ceae57828a0223f6699c424caf46b6d0001b552a2398f",
+    "hash": "c438303626b941299e745b8d6bb649989a7cbad866db3b6c847bc614fc5af75f",
     "homepage": "https://www.chemtable.com/autorun-organizer.htm",
     "innosetup": true,
     "license": "Freeware",
@@ -32,5 +32,5 @@
         ]
     ],
     "url": "https://files.chemtable.com/ao/autorun-organizer-setup.exe",
-    "version": "6.17"
+    "version": "6.20"
 }
