@@ -1,12 +1,12 @@
 {
     "architecture": {
         "32bit": {
-            "hash": "b5f69f75e412acc65df8590da45b3894040c4f6f2de59e601239a4a88eaa63de",
-            "url": "https://download.tortoisegit.org/tgit/2.18.0.0/TortoiseGit-2.18.0.0-32bit.msi"
+            "hash": "5e002b66180a7e4db3085b5d15ec4863427da575972d8bac169b640e19fe76af",
+            "url": "https://download.tortoisegit.org/tgit/2.19.0.0/TortoiseGit-2.19.0.0-32bit.msi"
         },
         "64bit": {
-            "hash": "1d9126338c34815a5bf8014a85d268578cb0b36880dc647764094c974e0973fe",
-            "url": "https://download.tortoisegit.org/tgit/2.18.0.0/TortoiseGit-2.18.0.0-64bit.msi"
+            "hash": "71e9818c4f277668cec3e43d9fa05672a050a23b38e9a750b0f5f5c552513505",
+            "url": "https://download.tortoisegit.org/tgit/2.19.0.0/TortoiseGit-2.19.0.0-64bit.msi"
         }
     },
     "autoupdate": {
@@ -112,5 +112,5 @@
             "/command:settings"
         ]
     ],
-    "version": "2.18.0.0"
+    "version": "2.19.0.0"
 }
